@@ -25,7 +25,10 @@ class loginController extends Controller
     public function Login(Request $request){
        // dd($request->all());
        
-        if (Auth::attempt($request->only('name','email','password'))){
+        // if (Auth::attempt($request->only('name','email','password'))){
+        //     return redirect('/dashboard');
+        // }
+        if(Auth::attempt(['name'=>$request->name,'email'=>$request->email,'password'=>$request->email])){
             return redirect('/dashboard');
         }
         return redirect('/')->with('message','login gagal! NIK dan Nama tidak di temukan');
@@ -41,14 +44,14 @@ class loginController extends Controller
     }
     public function simpanRegister(Request $request){
 
-              $request->validate([
+        $request->validate([
            'nik'=>'required|unique:users,email',
            'nama'=>'required'
        ],
        [
-           'nik.unique'=>'NIK tidak valid',
+           'nik.unique'=>'NIK sudah terdaftar',
            'nama.required'=>'nama tidak boleh kosong'
-       ]
+       ]  
     );
    // dd($request->all());
         $data=[

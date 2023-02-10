@@ -18,7 +18,6 @@ class cek
      */
     public function handle(Request $request, Closure $next)
     {
-        
 
       if (Auth::check()){
         return $next($request);

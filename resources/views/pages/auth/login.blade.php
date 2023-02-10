@@ -31,14 +31,14 @@
                       <div class="form-group">
                         <label for="email">NIK</label>
                         <input id="email" type="text" class="form-control" name="email" tabindex="1" required autocomplete="nope">
-                        <input id="password" type="hidden" class="form-control" name="password"  >
+                        <!-- <input id="password" type="hidden" class="form-control" name="password"  > -->
                       </div>
     
                       <div class="form-group">
                         <div class="d-block">
                             <label for="password" class="control-label">Nama Lengkap</label>
                           </div>
-                        <input id="password" type="text" class="form-control" name="name" tabindex="2" required autocomplete="nope">
+                        <input id="name" type="text" class="form-control" name="name" tabindex="2" required autocomplete="nope">
                         </div>
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
@@ -62,7 +62,6 @@
 
     <script>
       window.onload = function() {
-         
           var src = document.getElementById("email"),
               dst = document.getElementById("password");
           src.addEventListener('input', function() {

@@ -7,23 +7,19 @@
    
 
 @section('judul-card')
-    Data Email
+    Data Perjalanan
 @endsection
 
 
 @section('content')
-@if ($errors->any())
-<div class="alert alert-danger">
-	<button type="button" class="close" data-dismiss="alert">×</button>	
-	Please check the form below for errors
-</div>
+
+@if (session()->has('message'))
+    <script>
+      alert({{session()->get('message')}});
+    </script>
 @endif
     
-@if (session()->has('message'))
-    <div class="alert alert-danger">
-        {{session('message')}}
-     </div>
-@endif
+
 <table class="table table-sm">
     <thead>
       @php

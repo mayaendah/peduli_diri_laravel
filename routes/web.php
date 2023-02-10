@@ -27,13 +27,13 @@ Route::any('/postlogin',[loginController::class,'Login']);
 Route::get('/register',[loginController::class,'halamanRegister'])->name('register');
 Route::post('/simpanUser',[loginController::class,'simpanRegister']);
 
-
-    Route::get('/dashboard',[dashboardController::class,'index']);
-    Route::get('/perjalanan',[dashboardController::class,'perjalanan']);
-    Route::any('/simpanPerjalanan',[dashboardController::class,'simpanPerjalanan']);
-    Route::get('/cari',[dashboardController::class,'cariPerjalanan']);
+ 
+Route::get('/dashboard',[dashboardController::class,'index']);
+Route::get('/perjalanan',[dashboardController::class,'perjalanan']);
+Route::any('/simpanPerjalanan',[dashboardController::class,'simpanPerjalanan']);
+Route::get('/cari',[dashboardController::class,'cariPerjalanan']);
    
-    Route::get('/logout',[loginController::class,'LogOut']);
+Route::get('/logout',[loginController::class,'LogOut']);
 
 
  

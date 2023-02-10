@@ -18,7 +18,7 @@
                   <img src="../assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
                 </div>
                 @if (session()->has('message'))
-                <div class="alert alert-danger">
+                <div class="alert alert-succes">
                   {{session('message')}}
                 </div>
                 @endif
@@ -30,12 +30,12 @@
                        {{ csrf_field() }}
                       <div class="form-group">
                         <label for="email">NIK</label>
-                        <input id="email" type="text" class="form-control" name="nik" tabindex="1" autocomplete="nope" required autofocus>
+                        <input id="nik" type="text" class="form-control" name="nik" tabindex="1" autocomplete="nope" required autofocus>
                         @if ($errors->has('nik'))
-                        <div class="class" style="color: red;text-align:center">
-                          {{$errors->first('nik')}}
-                        </div>
-                      @endif
+                          <div class="class">
+                            {{$errors->first('nik')}}
+                          </div>
+                        @endif
                       </div>
     
                       <div class="form-group">
